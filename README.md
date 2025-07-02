@@ -1,4 +1,4 @@
-![Image](https://github.com/user-attachments/assets/1b3ac61b-9b28-40f6-9430-4cf43443c85b)
+![Image](https://github.com/user-attachments/assets/0cc5a221-5fee-4e58-9684-425d9b33e4ad)
 
 > TMDB Open API를 활용해 실제 영화 데이터를 연동하고, 사용자가 원하는 영화를 검색해 찾을 수 있도록 구현했습니다. <br>
 > 리스트에서 마우스를 올리는 것만으로 별점, 장르 등 주요 정보를 빠르게 확인할 수 있으며,<br>
