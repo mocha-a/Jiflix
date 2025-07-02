@@ -1,0 +1,245 @@
+@media (min-width:768px) and (max-width:1400px){
+    header{
+        padding: 0 5%;
+    }
+    main{
+        .con1{
+            .con1Flex{
+                gap: 50px;
+                .poster{
+                    width: 50%;
+                }
+            }
+            .con1_text{
+                width: 60%;
+                margin-bottom: 4%;
+                h2{
+                    font-size: clamp(2rem, 2vw, 2.5rem);
+                    margin-bottom: 20px;
+                }
+                
+            }
+            .detail_flex{
+                width: 90%;
+                gap: clamp(40px, 2vw, 50px);
+                .detail_poster{
+                    width: clamp(50%, 40vw, 60%);
+                }
+            }
+            .detail_text{
+                width: clamp(50%, 40vw, 60%);
+                h2{
+                    font-size: clamp(2.5rem, 2vw, 3.2rem);
+                }
+                .tag{
+                    font-size: clamp(1rem, 2vw, 1.1rem);
+                }
+            }
+            p {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4; /* ← 최대 줄 수 */
+                overflow: hidden;
+                line-height: 1.5; /* 줄간격도 적당히 조정 */
+                max-height: calc(1.5em * 4); /* 줄 수 * 줄간격 */
+                }
+            .youtube, .gogo{
+                padding: clamp(10px, 2vw, 12px) clamp(25px, 3vw, 27px);
+                font-size: clamp(1rem, 2vw, 1.4rem);
+            }
+        }
+        .image-small {
+            width: 22%;
+        }
+        .poster_path{
+            .slide_hover{
+                .slide_hover_flex{
+                    h3{
+                        font-size: clamp(1rem, 2vw, 1.3rem);
+                    }
+                    .flex_button{
+                        margin-right: clamp(8px, 2vw, 12px);
+                        width: clamp(25px, 2vw, 35px);
+                        height: clamp(25px, 2vw, 35px);
+                    }
+                    .slide_hover_flex01{
+                        div{
+                            margin: clamp(10px, 2vw, 18px) 0 clamp(5px, 1vw, 10px); 
+                        }
+                        p{
+                            font-size: clamp(0.8rem, 2vw, 1.1rem);
+                        }
+                    }
+                }
+            }
+        }
+        .listDetail{
+            h2{
+                margin-top: 20%;
+            }
+            div{
+                width: clamp(30%, 90vw, 100%);    
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    @mixin ellipsis{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    header {
+        .nav-pc {
+            display: none;
+        }
+        .burger {
+            display: flex;
+        }
+    }
+
+    main{
+        .con1{
+            article {
+                width: 90%;
+            }
+            .con1Flex{
+                width: 90%;
+                gap: 20px;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                .poster{
+                    width: 90%;
+                }
+            }
+            .overview{
+                font-size: 1rem;
+                margin-bottom: 0px
+            }
+            .con1_text{
+                width: 90%;
+                margin-bottom: 4%;
+                h2{
+                    font-size: 1.3rem;
+                    margin-bottom: 20px;
+                }
+                
+            }
+            .detail_flex{
+                width: 90%;
+                margin-top: 8%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                .detail_poster{
+                    width: 100%;
+                }
+            }
+            .detail_text{
+                width: 100%;
+                h2{
+                    font-size: 1.8rem;
+                    @include ellipsis;
+                    -webkit-line-clamp: 1;
+                }
+                .tag{
+                    font-size: 0.8rem;
+                }
+                .cast{
+                    display: none;
+                }
+            }
+            p {
+                @include ellipsis;
+                line-height: 1.5; /* 줄간격도 적당히 조정 */
+                max-height: calc(1.5em * 4); /* 줄 수 * 줄간격 */
+                -webkit-line-clamp: 4; /* ← 최대 줄 수 */
+                }
+            .youtube, .gogo{
+                padding: 10px 12px;
+                font-size: 1rem;
+            }
+            .button_flex{
+                display: flex;
+                gap: 4%;
+            }
+            .youtube::before{
+                content: '';
+                width: 22px; height: 22px;
+            }
+            .gogo::before{
+                content: '';
+                width: 20px; height: 20px;
+            }
+        }
+        .similar{
+            width: 90%;
+            .poster_path{
+                width: 90% !important;
+                .slide_hover{
+                    width: 150%;
+                }
+            }
+        }
+        .poster_path{
+            .slide_hover{ width: 150%; }
+        }
+        .con{
+            .title{
+                h3{font-size: 1.2rem;}
+            }
+        }
+        .toptop{
+            justify-content: space-evenly;
+            gap: 8px;
+        }
+        .image-small {
+            width: 48%;
+        }
+        .poster_path{
+            .slide_hover{
+                .slide_hover_flex{
+                    h3{
+                        font-size: 0.8rem;
+                        @include ellipsis;
+                        -webkit-line-clamp: 1;
+                    }
+                    .flex_button{
+                        margin-right: 8px;
+                        width: 25px;
+                        height: 25px;
+                    }
+                    .slide_hover_flex01{
+                        div{
+                            margin: 10px 0 5px;
+                        }
+                        p{
+                            font-size: 0.8rem;
+                            @include ellipsis;
+                            -webkit-line-clamp: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .listDetail{
+            h2{
+                margin-top: 32%;
+            }
+            div{
+                width: 100%;
+                margin: 50px 0;
+            }
+        }
+    }
+    footer{
+        .footerGrid{
+            font-size: 10px;
+        }
+    }
+}
