@@ -92,19 +92,19 @@
 
 > 개발 중 이슈와 해결 방안
 
- * /movie 경로에서 인기작과 평점 높은 작품을 같이 보여주고 싶었으나,<br>
-    기존 구조는 /movie/popular, /movie/top_rated 처럼 하나의 리스트만 보여주는 구조였음
+ * ```/movie``` 경로에서 인기작과 평점 높은 작품을 같이 보여주고 싶었으나,<br>
+    기존 구조는 ```/movie/popular```, ```/movie/top_rated``` 처럼 하나의 리스트만 보여주는 구조였음
 
     ⇒ **원인**: 
-    * /movie 경로에 대한 데이터가 존재하지 않았음
+    * ```/movie``` 경로에 대한 데이터가 존재하지 않았음
     * Card 컴포넌트에서 각 영화가 어떤 분류(popular/top_rated) 인지 알 수 있는 정보가 없었음
 
     ⇒ **해결방법**: 
-    * /movie 경로일 경우 popular와 top_rated 데이터를 동시에 요청 (Promise.all)
-    * 각각의 데이터에 .map(item => ({ ...item, type: 'popular' })) 식으로 type 값을 명시
+    * ```/movie``` 경로일 경우 popular와 top_rated 데이터를 동시에 요청 (Promise.all)
+    * 각각의 데이터에 ```.map(item => ({ ...item, type: 'popular' }))``` 식으로 type 값을 명시
     * setList()에 두 데이터를 합쳐서 저장<br>
-        → pageNum === 1일 때는 새로 덮고, 아니면 기존 리스트에 추가
-    * CardList 컴포넌트에 type={[...path, item.type]} 전달하여
+        → ```pageNum === 1```일 때는 새로 덮고, 아니면 기존 리스트에 추가
+    * CardList 컴포넌트에 ```type={[...path, item.type]}``` 전달하여
     * 카드가 본인이 인기작인지 평점작인지 구분 가능하도록 처리
 
 
