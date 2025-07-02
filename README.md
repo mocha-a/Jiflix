@@ -1,63 +1,67 @@
-![Image](https://github.com/user-attachments/assets/b6ebd557-2066-4b73-9463-4934d919f617)
+![Image](https://github.com/user-attachments/assets/1b3ac61b-9b28-40f6-9430-4cf43443c85b)
 
-## 🌙 요약
+> TMDB Open API를 활용해 실제 영화 데이터를 연동하고, 사용자가 원하는 영화를 검색해 찾을 수 있도록 구현했습니다. <br>
+> 리스트에서 마우스를 올리는 것만으로 별점, 장르 등 주요 정보를 빠르게 확인할 수 있으며,<br>
+> 유사 콘텐츠까지 자연스럽게 탐색할 수 있도록 사용자 경험을 고민하며 완성한, 저의 **첫번째 React 프로젝트**입니다.
+
+
+## 🎥 요약
 
 #### 1. **주제**
 
-- 사용자가 쉽고 빠르게 일정을 등록 · 관리할 수 있는 Flutter 기반 웹 일정 관리 앱
+- TMDB Open API를 활용해 실시간 영화와 TV 정보를 제공하는 React 기반 웹 애플리케이션 개발
 
 #### 2. **목표**
 
-- 일정 시간별 구분과 정렬로 가독성 향상
-- 색상별 그룹핑으로 일정 분류 편의성 증대
-- 오프라인에서도 데이터 유지 가능한 로컬 저장 지원
-- 효율적인 상태 관리로 원활한 사용자 경험 제공
+* TMDB API를 통한 인기 및 평점 기반 콘텐츠 조회 및 화면 표시
+* 사용자 친화적인 인터페이스로 영화 및 TV 콘텐츠를 쉽고 빠르게 검색할 수 있도록 구현
+* 마우스 호버 시 별점, 장르 등 주요 정보를 직관적으로 확인할 수 있게 UX 개선
+* 유사 콘텐츠 추천 기능으로 자연스러운 탐색 흐름 제공
+* React 컴포넌트 구조와 상태 관리, 라우팅을 직접 구현하여 실전 경험 쌓기
 
 #### 3. **개발 환경**
 
-- Flutter, Dart, GetX, Hive
+* React, JavaScript (ES6+), Axios
 
 #### 4. **기간**
 
-- 2025-06-10 ~ 2025-06-11 : 기획 및 디자인
-- 2025-06-11 ~ 2025-06-16 : 개발
-- 2025-06-16 : 테스트 및 배포
-
-총 5일, 1인
-
+* 2025.03.10 ~ 2025.03.12<br>
+추가작업 ⇒ 2025.06.30 ~ 2025.07.02
 
 ## 🔗 배포 URL
 
-- https://anji-moonly.vercel.app/
+* https://jiflix.vercel.app
 
 
 ## 📌 주요 기능
 
-- TableCalendar 기반 직관적인 달력 UI
-- 시작 시간 기준 자동 정렬 및 시간대 구분선 표시
-- 4가지 색상 그룹핑으로 일정 분류 및 시각화
-- 일정 검색 기능
-- GetX를 이용한 상태 관리
-- Hive를 활용한 로컬 데이터 저장 (오프라인 지원)
+* Axios를 통한 TMDB API 비동기 데이터 통신
+* 인기(popular) 및 평점 기반(top_rated) 영화/TV 콘텐츠 조회
+* 키워드 기반 영화 및 TV 프로그램 검색 기능
+* 마우스 호버 시 별점, 장르 등 주요 정보 표시
+* 선택한 콘텐츠의 유사 작품 추천 기능
+* Swiper를 이용한 슬라이더 UI 구현
+* React Router를 활용한 SPA 기반 페이지 라우팅
 
 
 ## 💼 프로젝트 폴더 구조
 
 ```
-📦moonly
- ┣ 📂assets
- ┣ 📂build                           # Flutter가 빌드한 결과물
- ┃ ┣ 📂web
- ┃ ┃ ┗ 📜index.html
- ┣ 📂lib
- ┃ ┣ 📂controller                    # 컴포넌트 폴더
- ┃ ┃ ┣ 📜calendar_controller.dart    # GetX 상태관리 컨트롤러 파일
- ┃ ┃ ┗ 📜moon_icon.dart              # 재사용 가능한 아이콘 위젯
- ┃ ┣ 📂screen                        # 화면 단위 위젯 (각 페이지별 UI 구성)
- ┃ ┃ ┣ 📜calendar.dart
- ┃ ┃ ┣ 📜list.dart
- ┃ ┃ ┗ 📜search.dart
- ┃ ┗ 📜main.dart                     # 앱 실행 진입점, 전체 라우팅 및 초기 설정
+🎥jiflix
+ ┣ 📂public
+ ┃ ┣ 📂img
+ ┃ ┗ 📜index.html
+ ┣ 📂src
+ ┃ ┣ 📂component             # 컴포넌트 폴더
+ ┃ ┃ ┗ 📂homebottom
+ ┃ ┣ 📂pages                 # 주요 페이지 컴포넌트 폴더
+ ┃ ┃ ┣ 📜Dateil.jsx          # 콘텐츠 상세 페이지
+ ┃ ┃ ┣ 📜Home.jsx            # 메인 홈 페이지
+ ┃ ┃ ┗ 📜Movie.jsx           # 영화/TV 리스트 페이지
+ ┣ 📜movieState.js           # 전역 상태 관리 (zustand)
+ ┣ 📜app.js                  # 앱의 진입점, 전체 라우팅 구성 파일
+ ┣ 📜style.scss              # 전체 스타일 설정 파일
+ ┣ 📜_res-style.scss         # 반응형
  ┗ 📜README.md
 ```
 
@@ -67,10 +71,13 @@
 
 | 사용기술 | 설명 |Badge |
 | :---:| :---: | :---: |
-| **Flutter** | **크로스 플랫폼 앱 개발 프레임워크** |![flutter](https://img.shields.io/badge/flutter-02569B?style=flat-square&logo=flutter&logoColor=white)|
-| **Dart** | **Flutter 전용 프로그래밍 언어** |![dart](https://img.shields.io/badge/dart-0175C2?style=flat-square&logo=dart&logoColor=white)|
-| **GetX** | **상태 관리** |![getx](https://img.shields.io/badge/getx-8A2BE2?style=flat-square&logo=getx&logoColor=white)|
-| **Hive** | **경량(key-value) 로컬 데이터베이스** |![dart](https://img.shields.io/badge/Hive-0175C2?style=flat-square&logo=dart&logoColor=white)|
+| **React** | **프론트엔드 프레임워크 (SPA 구축)** |![react](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)|
+|**React Router Dom** | **페이지 라우팅 관리** |![reactrouter](https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=reactrouter&logoColor=white)|
+|**JavaScript (ES6+)** | **주요 개발 언어** |![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white)|
+|**SCSS** | **스타일 전처리기** |![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=flat-square&logo=sass&logoColor=white)|
+| **Axios** | **HTTP 클라이언트 라이브러리** |![axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)|
+|**Zustand** | **상태 관리**|![Zustand](https://img.shields.io/badge/Zustand-181717?style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAv0lEQVQ4jeVUMQ7DIAx0KmZGlJGJB+RBjLyC1/ADVr7AC8gzCBJs7lCpUhqw0qpDqp7kxSefDWd5QkQYwVqLQogh/4oYIwAiDiOlhO/AOYe30+1P4g8FGUUqpSaC7q4Hs9ai1rorFkJAKeUuX0qBZVmGjZgQApRSXVJKeeByzsTQv2DK911urXX/hXMOpZQDt20bcM67NbVWmKjj8AnIJ6/rivDYt2fknMkJrm/K9QXJ4+C9h3med7laKxhjhjV3vjqJYwKihcAAAAAASUVORK5CYII=&logoColor=white)|
+| **Swiper** | **슬라이더** |![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=axios&logoColor=white)|
 
 ### 2. 개발 도구
 
@@ -81,38 +88,28 @@
 | **Vercel** | **서버리스 플랫폼** |![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)|
 | **Figma** | **디자인 & UI/UX**|![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white) |
 
-## 🧂전체 소스 코드
-
-이 저장소에는 Flutter 웹 빌드 결과물만 포함되어 있습니다.<br>
-프로젝트 전체 소스를 보시려면 아래 링크를 클릭해 주세요 !
-
-- [Flutter 전체 소스](https://github.com/mocha-a/heunjeok)
-
-## 📚 참고 URL
-
-- 기획서 : heunjeok Google Docs
-- 화면 설계 : heunjeok Figma
-- ppt : heunjeok Canva
-
-## 🌠 트러블슈팅 (Troubleshooting)
+## 🐞 트러블슈팅 (Troubleshooting)
 
 > 개발 중 이슈와 해결 방안
-> 
 
- - 모바일에서 showModalBottomSheet 사용 시 키보드가 올라오면 입력 필드와 저장 버튼이 가려지고, 버튼 클릭이 불가능한 현상이 발생
+ * /movie 경로에서 인기작과 평점 높은 작품을 같이 보여주고 싶었으나,<br>
+    기존 구조는 /movie/popular, /movie/top_rated 처럼 하나의 리스트만 보여주는 구조였음
 
-    ⇒ **원인**: 모달 하단이 키보드에 의해 가려지면서 뷰포트가 자동으로 조정되지 않아 입력 필드와 버튼이 화면 밖에 위치하게 되었음
+    ⇒ **원인**: 
+    * /movie 경로에 대한 데이터가 존재하지 않았음
+    * Card 컴포넌트에서 각 영화가 어떤 분류(popular/top_rated) 인지 알 수 있는 정보가 없었음
 
     ⇒ **해결방법**: 
-    - isScrollControlled: true 옵션을 추가하여 모달이 키보드에 맞게 올라가도록 설정 
-    - Padding 위젯에 MediaQuery.of(context).viewInsets.bottom을 적용해 키보드 높이만큼 여백 확보
-    - Column의 mainAxisSize를 MainAxisSize.min으로 설정해 모달 크기를 내용에 맞게 조절하여 UI가 키보드에 가려지지 않도록 개선
+    * /movie 경로일 경우 popular와 top_rated 데이터를 동시에 요청 (Promise.all)
+    * 각각의 데이터에 .map(item => ({ ...item, type: 'popular' })) 식으로 type 값을 명시
+    * setList()에 두 데이터를 합쳐서 저장<br>
+        → pageNum === 1일 때는 새로 덮고, 아니면 기존 리스트에 추가
+    * CardList 컴포넌트에 type={[...path, item.type]} 전달하여
+    * 카드가 본인이 인기작인지 평점작인지 구분 가능하도록 처리
 
 
 ## 💭 느낀점
 
-Flutter와 친해지기 위해 만든 첫 번째 프로젝트였다.<br>
-처음에는 정적 타입 언어에 익숙하지 않아서 Dart의 타입 시스템에 적응하는 데 어려움이 있었고, 특히 Hive에 데이터를 저장하고 불러올 때 타입 오류로 인해 에러가 자주 발생했다.<br><br>
-
-하지만 Flutter의 구조가 React와 유사한 점이 많아 전체적인 흐름을 이해하는 데는 큰 어려움이 없었고, 자연스럽게 적응할 수 있었다.<br>
-또한 Dart는 TypeScript와 일부 구조나 문법이 비슷한 부분이 있어, 이번 경험이 추후 타입스크립트를 공부할 때 간접적으로 도움이 될 수 있을 것 같다고 느꼈다.
+처음 리액트를 다루다 보니 컴포넌트 나누기, props와 state 관리가 많이 헷갈렸다.<br>
+직접 조건 분기와 데이터 흐름을 관리하면서 리액트 구조를 깊이 이해하게 됐다.<br>
+덕분에 props와 state의 역할과 쓰임새도 확실히 공부할 수 있었고, SPA 개발에 자신감이 생겼다.
